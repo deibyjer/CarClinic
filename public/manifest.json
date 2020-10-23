@@ -1,0 +1,8 @@
+{
+    "short_name": "Car Clinic",
+    "name": "Car Clinic",
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#3C95BC",
+    "background_color": "#FFFFFF"
+}
