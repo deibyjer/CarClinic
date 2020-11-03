@@ -1,7 +1,8 @@
 import React from 'react';
 import { Grommet } from 'grommet';
 
-import Home from './pages/home/home.js'
+import Home from './pages/home/home.js';
+import Register from './pages/register/register.js';
 
 const theme = {
   global: {
@@ -10,9 +11,10 @@ const theme = {
      },
     font: {
       family: 'Roboto',
-      size: '18px',
-      height: '20px',
     },
+    Text: {
+      elevation: 'large',
+    }
   },
 };
 
