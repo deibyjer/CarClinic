@@ -1,12 +1,11 @@
 ﻿import React from 'react';
-import {Anchor, Box, Form, FormField, TextInput, Header, Text, Footer} from 'grommet';
 
 class Register extends React.Component {
     render() {
         return (
-            <Box>
+            <div>
                 <LayoutContainer />
-            </Box>
+            </div>
         );
     }
 }
@@ -14,11 +13,11 @@ class Register extends React.Component {
 class LayoutContainer extends React.Component {
     render() {
         return (
-          <Box>
+          <div>
               <PageHeader />
               <PageContent />
               <PageFooter />
-          </Box>  
+          </div>  
         );
     }
 }
@@ -26,10 +25,10 @@ class LayoutContainer extends React.Component {
 class PageHeader extends React.Component {
     render() {
         return (
-            <Header>
+            <div>
                 <Logo />
                 <BackButton />
-            </Header>
+            </div>
         );
     }
 }
@@ -37,9 +36,9 @@ class PageHeader extends React.Component {
 class Logo extends React.Component {
     render() {
         return (
-          <Box>
+          <div>
               Logo
-          </Box>  
+          </div>  
         );
     }
 }
@@ -47,9 +46,9 @@ class Logo extends React.Component {
 class BackButton extends React.Component {
     render() {
         return (
-            <Box>
+            <div>
                 Back
-            </Box>
+            </div>
         );
     }
 }
@@ -57,9 +56,9 @@ class BackButton extends React.Component {
 class PageContent extends React.Component {
     render() {
         return (
-          <Box>
+          <div>
               <RegisterForm />
-          </Box>  
+          </div>  
         );
     }
 }
@@ -67,12 +66,12 @@ class PageContent extends React.Component {
 class RegisterForm extends React.Component {
     render() {
         return (
-          <Form>
-              <Text>
+          <div>
+              <div>
                   Sign Up!
-              </Text>
+              </div>
               <FormStepOne />
-          </Form>  
+          </div>  
         );
     }
 }
@@ -80,11 +79,9 @@ class RegisterForm extends React.Component {
 class FormStepOne extends React.Component {
     render() {
         return (
-          <Box>
-              <FormField label="email">
-                  <TextInput placeholder="type here" />
-              </FormField>
-          </Box>  
+          <div>
+
+          </div>  
         );
     }
 }
@@ -92,9 +89,9 @@ class FormStepOne extends React.Component {
 class FormStepTwo extends React.Component {
     render() {
         return (
-            <Box>
+            <div>
                 Step two
-            </Box>
+            </div>
         );
     }
 }
@@ -102,9 +99,9 @@ class FormStepTwo extends React.Component {
 class FormStepThree extends React.Component {
     render() {
         return (
-            <Box>
+            <div>
                 Step three
-            </Box>
+            </div>
         );
     }
 }
@@ -112,9 +109,9 @@ class FormStepThree extends React.Component {
 class FormStepFour extends React.Component {
     render() {
         return (
-            <Box>
+            <div>
                 Step four
-            </Box>
+            </div>
         );
     }
 }
@@ -122,9 +119,9 @@ class FormStepFour extends React.Component {
 class PageFooter extends React.Component {
     render() {
         return (
-            <Footer>
+            <div>
                 Footer
-            </Footer>
+            </div>
         );
     }
 }

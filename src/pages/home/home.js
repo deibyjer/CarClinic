@@ -1,13 +1,13 @@
 import React from 'react';
-import { Avatar, Anchor, Box, Nav, Main, Grommet, Header, Select, TextInput, Text, Footer, Image } from 'grommet';
+import {Dropdown, Image, Input, Menu} from 'semantic-ui-react'
 import logo from './images/logo.png';
 
 class Home extends React.Component {
     render() {
         return (
-            <Box>
+            <div className='Home'>
                 <LayoutContainer />
-            </Box>
+            </div>
         );
     }
 }
@@ -15,11 +15,11 @@ class Home extends React.Component {
 class LayoutContainer extends React.Component {
     render() {
         return (
-          <Box>
+          <div className='LayoutContainer'>
               <PageHeader />
               <PageContent />
               <PageFooter />
-          </Box>  
+          </div>  
         );
     }
 }
@@ -27,12 +27,13 @@ class LayoutContainer extends React.Component {
 class PageHeader extends React.Component {
     render() {
         return (
-            <Header>
-                <Nav>
-                    <Anchor label="Home" href="#" />
-                    <Anchor label="Profile" href="#" />
-                </Nav>
-            </Header>
+            <div className='PageHeader'>
+                <Menu>
+                    <Menu.Item header>Car Clinic</Menu.Item>
+                    <Menu.Item>Profile</Menu.Item>
+                    <Menu.Item>Login</Menu.Item>
+                </Menu>
+            </div>
         );
     }
 }
@@ -40,9 +41,10 @@ class PageHeader extends React.Component {
 class PageContent extends React.Component {
     render() {
         return (
-            <Box>
+            <div className='PageContent'>
                 <Logo />
-            </Box>
+                <UserInput />
+            </div>
         );
     }
     
@@ -51,10 +53,9 @@ class PageContent extends React.Component {
 class Logo extends React.Component {
     render() {
         return (
-            <Box>
+            <div className='Logo'>
                 <Image src={logo} />
-                <Text>Here for all your car needs</Text>
-            </Box>
+            </div>
         );
     }
 }
@@ -63,14 +64,16 @@ class UserInput extends React.Component {
     render() {
         const SERVICE_LIST = ["Brake discs and pads replacement", "Brake pads replacement", "Premium brake upgrade (front and rear discs and pads)", "Brakes shoes replacement - rear (all)"];
         return (
-            <Box>
-                <Text>I am looking for a </Text>
-                <Select
+            <div className='UserInput'>
+                I am looking for a 
+                <Dropdown
+                    placeholder='Select Service'
+                    selection
                     options={SERVICE_LIST}
                 />
-                <Text>in</Text>
-                <TextInput placeholder="type here" />
-            </Box>
+                in
+                <Input type="text" placeholder="Enter Post Code"/>
+            </div>
         );
     }
 }
@@ -78,9 +81,9 @@ class UserInput extends React.Component {
 class PageFooter extends React.Component {
     render() {
         return (
-            <Footer>
+            <div className='PageFooter'>
                 Footer
-            </Footer>
+            </div>
         );
     }
 }

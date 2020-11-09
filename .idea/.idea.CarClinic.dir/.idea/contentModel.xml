@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Deiby\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Deiby\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Deiby\Documents\GitHub\CarClinic" t="IncludeFlat">
+      <e p="node_modules\@fluentui\react-component-event-listener" t="IncludeRecursive" />
+      <e p="node_modules\@fluentui\react-component-ref" t="IncludeRecursive" />
+      <e p="node_modules\@semantic-ui-react\event-stack" t="IncludeRecursive" />
+      <e p="node_modules\clsx" t="IncludeRecursive" />
+      <e p="node_modules\fast-deep-equal" t="IncludeRecursive" />
+      <e p="node_modules\keyboard-key" t="IncludeRecursive" />
+      <e p="node_modules\react" t="IncludeRecursive" />
+      <e p="node_modules\react-dom" t="IncludeRecursive" />
+      <e p="node_modules\react-fast-compare" t="IncludeRecursive" />
+      <e p="node_modules\react-popper" t="IncludeRecursive" />
+      <e p="node_modules\react-scripts" t="IncludeRecursive" />
+      <e p="node_modules\semantic-ui-css" t="IncludeRecursive" />
+      <e p="node_modules\semantic-ui-react" t="IncludeRecursive" />
+    </e>
+  </component>
+</project>
