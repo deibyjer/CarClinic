@@ -46,7 +46,7 @@ class PageHeader extends React.Component {
                         <Menu.Item header>Car Clinic</Menu.Item>
                         <Menu.Item>Profile</Menu.Item>
                         <Menu.Item>Login</Menu.Item>
-                        <Menu.Item>Sign Up</Menu.Item>
+                        <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
                     </Menu>
                 </Container>
             </div>
