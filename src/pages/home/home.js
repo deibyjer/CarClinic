@@ -7,9 +7,6 @@ import MOTIcon from './images/Icon_MOT.png'
 import calloutIcon from './images/Icon_Callout.png'
 import MechanicBackground from './images/background.jpg'
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
 } from 'react-router-dom'
 

@@ -16,3 +16,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+.idea/.idea.CarClinic.dir/.idea/workspace.xml
+.idea/.idea.CarClinic.dir/.idea/misc.xml
