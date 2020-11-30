@@ -1,5 +1,6 @@
 ﻿import React from 'react';
 import {Button, Form} from "semantic-ui-react";
+import PageHeader from '../components/PageHeader';
 
 class Register extends React.Component {
     render() {
@@ -23,16 +24,6 @@ class LayoutContainer extends React.Component {
     }
 }
 
-class PageHeader extends React.Component {
-    render() {
-        return (
-            <div>
-                <Logo />
-                <BackButton />
-            </div>
-        );
-    }
-}
 
 class Logo extends React.Component {
     render() {

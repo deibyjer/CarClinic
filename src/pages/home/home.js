@@ -6,6 +6,7 @@ import bodyworkIcon from './images/Icon_bodywork.png'
 import MOTIcon from './images/Icon_MOT.png'
 import calloutIcon from './images/Icon_Callout.png'
 import MechanicBackground from './images/background.jpg'
+import PageHeader from '../components/PageHeader';
 import {
     Link
 } from 'react-router-dom'
@@ -34,22 +35,7 @@ class LayoutContainer extends React.Component {
     }
 }
 
-class PageHeader extends React.Component {
-    render() {
-        return (
-            <div className='PageHeader'>
-                <Container>
-                    <Menu>
-                        <Menu.Item header>Car Clinic</Menu.Item>
-                        <Menu.Item>Profile</Menu.Item>
-                        <Menu.Item>Login</Menu.Item>
-                        <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
-                    </Menu>
-                </Container>
-            </div>
-        );
-    }
-}
+
 
 class PageContent extends React.Component {
     render() {
