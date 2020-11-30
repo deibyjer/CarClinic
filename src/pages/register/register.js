@@ -1,6 +1,7 @@
 ﻿import React from 'react';
-import {Button, Form} from "semantic-ui-react";
+import {Button, Container, Form} from "semantic-ui-react";
 import PageHeader from '../components/PageHeader';
+import mechanic_2 from '../home/images/mechanic_2.jpg';
 
 class Register extends React.Component {
     render() {
@@ -15,11 +16,19 @@ class Register extends React.Component {
 class LayoutContainer extends React.Component {
     render() {
         return (
-          <div>
-              <PageHeader />
+          <div                    style={{
+         background:`url(${mechanic_2})`,
+                    }}>
+                <Container>
+                    <div
+
+                    >                
+              <PageHeader />   
               <PageContent />
-              <PageFooter />
-          </div>  
+                <PageFooter />
+                    </div>
+                </Container>
+                    </div> 
         );
     }
 }

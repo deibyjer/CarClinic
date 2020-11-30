@@ -8,7 +8,7 @@ class PageHeader extends React.Component {
             <div className='PageHeader'>
                 <Container>
                     <Menu>
-                        <Menu.Item header>Car Clinic</Menu.Item>
+                        <Menu.Item header as={Link} to='../home/home'>Car Clinic</Menu.Item>
                         <Menu.Item>Profile</Menu.Item>
                         <Menu.Item>Login</Menu.Item>
                         <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
