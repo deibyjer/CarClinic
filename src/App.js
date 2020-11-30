@@ -7,6 +7,7 @@ import {
 
 import Home from './pages/home/home.js';
 import Register from './pages/register/register.js';
+import BusinessDashboard from './pages/businessdashboard/BusinessDashboard.js';
 
 class App extends React.Component {
   render() {
@@ -15,6 +16,9 @@ class App extends React.Component {
           <Switch>
             <Route path="/register">
               <Register />
+            </Route>
+            <Route path="/dashboard">
+              <BusinessDashboard />
             </Route>
             <Route path="/">
               <Home />

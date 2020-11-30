@@ -1,5 +1,18 @@
 import React from 'react';
-import {Button, Icon, Dropdown, Divider,Image, Input, Menu, List, Container, Grid, Segment} from 'semantic-ui-react'
+import {
+    Button,
+    Icon,
+    Dropdown,
+    Divider,
+    Image,
+    Input,
+    Modal,
+    List,
+    Container,
+    Grid,
+    Segment,
+    Menu
+} from 'semantic-ui-react'
 import logo from './images/logo.png'
 import mechanicIcon from './images/Icon_mechanic.png'
 import bodyworkIcon from './images/Icon_bodywork.png'
@@ -49,7 +62,6 @@ class PageContent extends React.Component {
                         <Grid.Column>
                             <div>
                                 <img src ={MechanicBackground} className='ui floated image' opacity='50%'/>
-
                                 <CustomerInput />
                             </div>
                         </Grid.Column>
@@ -87,9 +99,9 @@ class ServiceGrid extends React.Component {
                                 </Container>
                             </Grid.Column >
                             <Grid.Column width ={4}>
-                                <Container>
+                                <Container  as={Link} to='/dashboard'>
                                     Emergency Callouts  
-                                    <img src ={calloutIcon} size='medium' centered  />
+                                    <img src ={calloutIcon} size='medium' centered />
                                 </Container>
                             </Grid.Column>
                         </Grid.Row> 

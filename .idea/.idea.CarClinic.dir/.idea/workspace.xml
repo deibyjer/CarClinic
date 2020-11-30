@@ -20,10 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b4c4231-4a79-4677-a63f-d29c9a9b55d2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/components/PageHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/businessdashboard/BusinessDashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/components/LoginModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarClinic.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarClinic.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/components/PageHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/components/PageHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/register/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/register/register.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,9 +51,12 @@
         <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/pages/components/Header.js" />
         <option value="$PROJECT_DIR$/src/pages/register/register.js" />
+        <option value="$PROJECT_DIR$/src/pages/components/PageHeader.js" />
+        <option value="$PROJECT_DIR$/src/pages/components/LoginModal.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/pages/businessdashboard/BusinessDashboard.js" />
         <option value="$PROJECT_DIR$/src/pages/home/home.js" />
       </list>
     </option>

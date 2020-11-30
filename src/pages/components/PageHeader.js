@@ -1,6 +1,7 @@
 import React from "react";
-import {Container, Menu} from "semantic-ui-react";
+import {Button, Modal, Container, Menu} from "semantic-ui-react";
 import {Link} from "react-router-dom";
+import LoginModal from './LoginModal';
 
 class PageHeader extends React.Component {
     render() {
@@ -10,7 +11,7 @@ class PageHeader extends React.Component {
                     <Menu>
                         <Menu.Item header as={Link} to='../home/home'>Car Clinic</Menu.Item>
                         <Menu.Item>Profile</Menu.Item>
-                        <Menu.Item>Login</Menu.Item>
+                        <LoginModal />
                         <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
                     </Menu>
                 </Container>
