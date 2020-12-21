@@ -20,6 +20,7 @@ import MOTIcon from './images/Icon_MOT.png'
 import calloutIcon from './images/Icon_Callout.png'
 import MechanicBackground from './images/background.jpg'
 import PageHeader from '../components/PageHeader';
+import PageFooter from '../components/PageFooter';
 import {
     Link
 } from 'react-router-dom'
@@ -40,6 +41,7 @@ class LayoutContainer extends React.Component {
         return (
             <div className='LayoutContainer'>
                 <PageHeader />
+                <HomePageHeading />
                 <PageContent />
                 <ServiceGrid />
                 <PageFooter />
@@ -47,27 +49,26 @@ class LayoutContainer extends React.Component {
         );
     }
 }
+class HomePageHeading extends React.Component {
+    render() {
+        return (
+            <div align= 'center' style ={{padding: '8em 3em'}}>
+                <h1> Find your local garage, with trust</h1>
+            </div>
+        )
+    }
 
 
+
+}
 
 class PageContent extends React.Component {
     render() {
         return (
-            <Segment>
-                <Grid columns={2}n relaxed='very'>
-                    <Grid.Row>
-                        <Grid.Column>
-                            <DescriptionGrid />              
-                        </Grid.Column>
-                        <Grid.Column>
-                            <div>
-                                <img src ={MechanicBackground} className='ui floated image' opacity='50%'/>
-                                <CustomerInput />
-                            </div>
-                        </Grid.Column>
-                    </Grid.Row>
-                </Grid>                  
-            </Segment>
+            <div>
+                <CustomerInput /> 
+                <DescriptionGrid />                
+            </div>  
         );
     }
 }
@@ -117,24 +118,13 @@ class ServiceGrid extends React.Component {
 class DescriptionGrid extends React.Component {
     render() {
         return (
-            <div className='DescriptionGrid'>
-                <div className='ui active center'
-                    style={{
-                        display: 'flex',
-                            position: 'absolute',
-                                width: '100%',
-                                    height: '100%',
-                                        justifyContent: 'center',
-                                            zIndex: 1,
-                    }}>
+            <div className='DescriptionGrid' align ='center'>
                     <Container>
                         <h2>Find your local garage, with trust </h2>
                         <li>Standardised Pricing</li>
                         <li>Friendly Neighbourhood Service</li>
                         <li>Clear Reviews of Mechanics</li>
                     </Container>
-                </div>
-                <img src={MechanicBackground} className='ui floated image' opacity='50%'/>
             </div>
 
         )
@@ -149,60 +139,19 @@ class CustomerInput extends React.Component {
     render() {
         return (
             <div className='CustomerInput'>
-                <Container>
-                    <div className='ui active center'
-                        style={{
-                            display: 'flex',
-                                position: 'absolute',
-                                    width: '100%',
-                                        height: '100%',
-                                            justifyContent: 'center',
-                                                zIndex: 1,
-                                                    padding: 15,
-                        }}>
-                        <Container>
-                            <h3>Find a mechanic near you now!</h3>
-                            <Divider horizontal></Divider>
+                        <div align ='center' 
+                        style ={{ 
+                            padding: '5em 3em',
+                            backgroundcolour: 'powerblue',
+                        }} 
+                            
+                            >
+                            <h2>Find a mechanic near you now!</h2>
                             <Input type="text" placeholder="Vehicle Registration Number"/>
                             <Input type="text" placeholder="Postcode" />
-                        </Container>
+                            <Button basic color='blue' as={Link} to='/searchresults'>Go!</Button>
+                        </div>
 
-                    </div>
-                </Container>
-            </div>
-        );
-    }
-}
-
-
-class PageFooter extends React.Component {
-    render() {
-        return (
-            <div className='PageFooter'>
-                <Grid columns={4}>
-                    <Grid.Row stretched>
-                        <Grid.Column>
-                            <Container textAlign='center'>
-                               About Us
-                            </Container>
-
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Container textAlign='center'>
-                                The Legal Stuff
-                            </Container>
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Container textAlign='center'>
-                                Our Story
-                            </Container></Grid.Column>
-                        <Grid.Column>
-
-                            <Container textAlign='center'>
-                                Contact Us
-                            </Container></Grid.Column>
-                    </Grid.Row>
-                </Grid>
             </div>
         );
     }
