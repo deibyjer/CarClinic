@@ -1,7 +1,9 @@
 ﻿import React from 'react';
 import {Button, Container, Form} from "semantic-ui-react";
 import PageHeader from '../components/PageHeader';
+import PageFooter from '../components/PageFooter';
 import mechanic_2 from '../home/images/mechanic_2.jpg';
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
     render() {
@@ -16,13 +18,9 @@ class Register extends React.Component {
 class LayoutContainer extends React.Component {
     render() {
         return (
-          <div                    style={{
-         background:`url(${mechanic_2})`,
-                    }}>
+          <div>
                 <Container>
-                    <div
-
-                    >                
+                    <div>                
               <PageHeader />   
               <PageContent />
                 <PageFooter />
@@ -55,16 +53,6 @@ class BackButton extends React.Component {
 }
 
 class PageContent extends React.Component {
-    render() {
-        return (
-          <div>
-              <RegisterForm />
-          </div>  
-        );
-    }
-}
-
-class RegisterForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -77,13 +65,24 @@ class RegisterForm extends React.Component {
             step: this.state.step + 1,
         });
     }
-    
+
     previousStep = () => {
         this.setState({
             step: this.state.step - 1,
         });
     }
+    
+    render() {
+        return (
+          <div>
+              <RegisterForm step={this.state.step} />
+              <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep} />
+          </div>  
+        );
+    }
+}
 
+class RegisterForm extends React.Component {
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({
@@ -104,8 +103,7 @@ class RegisterForm extends React.Component {
         const formSteps = {1: <FormStepOne />, 2: <FormStepTwo />, 3: <FormStepThree />, 4: <FormStepFour />}
         return (
             <Form>
-                {formSteps[this.state.step]}
-                <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep} />
+                {formSteps[this.props.step]}
             </Form>
         );
     }
@@ -185,7 +183,7 @@ class FormNavigation extends React.Component {
             nav = (
                 <div>
                     <NavigationButton text={"Back"} onClick={this.props.previous} />
-                    <Button type='submit'>Submit</Button>
+                    <Button type='submit' as={Link} to='/searchresults' >Submit</Button>
                 </div>
             );
         }
@@ -199,16 +197,6 @@ class NavigationButton extends React.Component {
           <Button onClick={this.props.onClick}>
               {this.props.text}
           </Button>  
-        );
-    }
-}
-
-class PageFooter extends React.Component {
-    render() {
-        return (
-            <div>
-                Footer
-            </div>
         );
     }
 }
