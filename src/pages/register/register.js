@@ -1,8 +1,7 @@
 import React from 'react';
-import {Button, Container, Form, Grid, Segment, Divider} from "semantic-ui-react";
+import {Button, Form, Grid, Segment} from "semantic-ui-react";
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
-import mechanic_2 from '../home/images/mechanic_2.jpg';
 import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
@@ -18,15 +17,11 @@ class Register extends React.Component {
 class LayoutContainer extends React.Component {
     render() {
         return (
-          <div>
-                <Container>
-                    <div>                
-              <PageHeader />   
+            <div>
+              <PageHeader />
               <PageContent />
-                <PageFooter />
-                    </div>
-                </Container>
-        </div> 
+              <PageFooter />
+            </div> 
         );
     }
 }
@@ -35,13 +30,13 @@ class PageContent extends React.Component {
     render() {
         return (
             <div>
-            <UserType />
+                <RegisterForm />
             </div>
         );
     }
 }
 
-class UserType extends React.Component {
+class RegisterForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -58,31 +53,36 @@ class UserType extends React.Component {
     }
 
     render() {
-        const UserTypeButton= (
-        <Grid columns={2} stackable textAlign='center'>
-        <Grid.Row verticalAlign='middle'>
-            <Grid.Column>
-                <Button onClick={this.handleCustomerClick}>
-                    Customer
-                </Button>
-            </Grid.Column>
-            <Grid.Column>
-                <Button onClick={this.handleBusinessClick}>
-                    Service Provider
-                </Button>
-            </Grid.Column>
-        </Grid.Row>
-    </Grid>
-    )
-        
+
         if (this.state.isBusiness === null) {
-            return UserTypeButton;
+            return <UserTypeButtons handleCustomerClick={this.handleCustomerClick} handleBusinessClick={this.handleBusinessClick}/>;
         }
 
         return (
             <div>
-                {this.state.isBusiness ? <BusinessRegisterForm step={1}/> : <CustomerRegisterForm />}
+                {this.state.isBusiness ? <BusinessRegisterForm /> : <CustomerRegisterForm />}
             </div>
+        );
+    }
+}
+
+class UserTypeButtons extends React.Component {
+    render() {
+        return (
+            <Grid columns={2} stackable textAlign='center'>
+                <Grid.Row verticalAlign='middle'>
+                    <Grid.Column>
+                        <Button onClick={this.props.handleCustomerClick}>
+                            Customer
+                        </Button>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <Button onClick={this.props.handleBusinessClick}>
+                            Service Provider
+                        </Button>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
         );
     }
 }
@@ -91,10 +91,8 @@ class BusinessRegisterForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isBusiness: false,
             step: 1
         }
-
     }
 
     nextStep = () => {
@@ -129,10 +127,10 @@ class BusinessRegisterForm extends React.Component {
         const formSteps = {1: <FormStepOne />, 2: <FormStepTwo />, 3: <FormStepThree />, 4: <FormStepFour />}
         return (
             <Segment>
-            <Form>
-                {formSteps[this.state.step]}
-            </Form>
-            <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
+                <Form>
+                    {formSteps[this.state.step]}
+                </Form>
+                <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
             </Segment>
         );
     }
