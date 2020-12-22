@@ -1,5 +1,5 @@
-import React from 'react';
-import {Button, Container, Form, Grid, Segment, Divider} from "semantic-ui-react";
+﻿import React from 'react';
+import {Button, Container, Form} from "semantic-ui-react";
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
 import mechanic_2 from '../home/images/mechanic_2.jpg';
@@ -26,75 +26,38 @@ class LayoutContainer extends React.Component {
                 <PageFooter />
                     </div>
                 </Container>
-        </div> 
+                    </div> 
+        );
+    }
+}
+
+
+class Logo extends React.Component {
+    render() {
+        return (
+          <div>
+              Logo
+          </div>  
+        );
+    }
+}
+
+class BackButton extends React.Component {
+    render() {
+        return (
+            <div>
+                Back
+            </div>
         );
     }
 }
 
 class PageContent extends React.Component {
-    render() {
-        return (
-            <div>
-            <UserType />
-            </div>
-        );
-    }
-}
-
-class UserType extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isBusiness: null,
-        }
-    }
-
-    handleBusinessClick = () => {
-        this.setState({isBusiness: true})
-    }
-
-    handleCustomerClick = () => {
-        this.setState({isBusiness: false});
-    }
-
-    render() {
-        const UserTypeButton= (
-        <Grid columns={2} stackable textAlign='center'>
-        <Grid.Row verticalAlign='middle'>
-            <Grid.Column>
-                <Button onClick={this.handleCustomerClick}>
-                    Customer
-                </Button>
-            </Grid.Column>
-            <Grid.Column>
-                <Button onClick={this.handleBusinessClick}>
-                    Service Provider
-                </Button>
-            </Grid.Column>
-        </Grid.Row>
-    </Grid>
-    )
-        
-        if (this.state.isBusiness === null) {
-            return UserTypeButton;
-        }
-
-        return (
-            <div>
-                {this.state.isBusiness ? <BusinessRegisterForm step={1}/> : <CustomerRegisterForm />}
-            </div>
-        );
-    }
-}
-
-class BusinessRegisterForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isBusiness: false,
             step: 1
         }
-
     }
 
     nextStep = () => {
@@ -108,7 +71,18 @@ class BusinessRegisterForm extends React.Component {
             step: this.state.step - 1,
         });
     }
+    
+    render() {
+        return (
+          <div>
+              <RegisterForm step={this.state.step} />
+              <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep} />
+          </div>  
+        );
+    }
+}
 
+class RegisterForm extends React.Component {
     handleChange(event) {
         const {name, value} = event.target;
         this.setState({
@@ -128,26 +102,12 @@ class BusinessRegisterForm extends React.Component {
     render() {
         const formSteps = {1: <FormStepOne />, 2: <FormStepTwo />, 3: <FormStepThree />, 4: <FormStepFour />}
         return (
-            <Segment>
             <Form>
-                {formSteps[this.state.step]}
+                {formSteps[this.props.step]}
             </Form>
-            <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
-            </Segment>
         );
     }
 }
-
-class CustomerRegisterForm extends React.Component {
-    render() {
-        return(
-            <div>
-               Your Mom
-            </div>
-        );
-    }
-}
-
 
 class FormStepOne extends React.Component {
     render() {
