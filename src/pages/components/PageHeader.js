@@ -5,13 +5,15 @@ import LoginModal from './LoginModal';
 
 class PageHeader extends React.Component {
     render() {
+        let onHome = this.props.page === 'Home';
+        let homeMenuItem = <Menu.Item header as={Link} to='../'>Car Clinic</Menu.Item>;
         return (
             <div className='PageHeader'>
-                    <Menu size='medium'>
-                        <Menu.Item header as={Link} to='../home/home'>Car Clinic</Menu.Item>
+                    <Menu size='medium' secondary>
+                        {!onHome && homeMenuItem}
                         <Menu.Item position='right'>
-                        <LoginModal />
-                        <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
+                            <LoginModal />
+                            <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
                         </Menu.Item>
                     </Menu>
             </div>
