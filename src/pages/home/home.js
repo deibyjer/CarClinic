@@ -11,14 +11,11 @@ import {
     Container,
     Grid,
     Segment,
-    Menu
+    Menu,
+    Select
 } from 'semantic-ui-react'
-import logo from './images/logo.png'
-import mechanicIcon from './images/Icon_mechanic.png'
-import bodyworkIcon from './images/Icon_bodywork.png'
-import MOTIcon from './images/Icon_MOT.png'
-import calloutIcon from './images/Icon_Callout.png'
-import MechanicBackground from './images/background.jpg'
+import logo from './images/logo.jpg'
+
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
 import {
@@ -39,22 +36,24 @@ class Home extends React.Component {
 class LayoutContainer extends React.Component {
     render() {
         return (
-            <div className='LayoutContainer'>
+            <div>
                 <PageHeader />
                 <HomePageHeading />
                 <PageContent />
-                <ServiceGrid />
                 <PageFooter />
-            </div>  
+            </div>
         );
     }
 }
+
 class HomePageHeading extends React.Component {
     render() {
         return (
-            <div align= 'center' style ={{padding: '8em 3em'}}>
-                <h1> Find your local garage, with trust</h1>
-            </div>
+            <Container style={{
+                padding:' 6em 15em'
+            }}>
+            <img src={logo} class="ui fluid image" />
+            </Container>
         )
     }
 
@@ -66,93 +65,39 @@ class PageContent extends React.Component {
     render() {
         return (
             <div>
-                <CustomerInput /> 
-                <DescriptionGrid />                
+                <CustomerInput />               
             </div>  
         );
     }
 }
 
-class ServiceGrid extends React.Component {
-    render (){
-        return(
-            <Segment>
-                <Container>
-                    <h3 align='center'>Anything your car needs, at your fingertips</h3>
-                    <Grid columns={4}>
-                        <Grid.Row stretched>
-                            <Grid.Column width ={4}>
-                                <Container>
-                                    Mechanics and Diagnostics
-                                    <img src={mechanicIcon} size='medium' centered />
-                                </Container>
-                            </Grid.Column>
-                            <Grid.Column width ={4}>
-                                <Container>
-                                    Bodywork
-                                    <img src={bodyworkIcon} size='medium' centered  />
-                                </Container>
-                            </Grid.Column>
-                            <Grid.Column width ={4}>
-                                <Container>
-                                    Servicing and MOT
-                                    <img src={MOTIcon} size='medium' centered />
-                                </Container>
-                            </Grid.Column >
-                            <Grid.Column width ={4}>
-                                <Container  as={Link} to='/dashboard'>
-                                    Emergency Callouts  
-                                    <img src ={calloutIcon} size='medium' centered />
-                                </Container>
-                            </Grid.Column>
-                        </Grid.Row> 
-                    </Grid>    
-                </Container>
-            </Segment>
-
-        )
-    }
-}
-
-
-class DescriptionGrid extends React.Component {
-    render() {
-        return (
-            <div className='DescriptionGrid' align ='center'>
-                    <Container>
-                        <h2>Find your local garage, with trust </h2>
-                        <li>Standardised Pricing</li>
-                        <li>Friendly Neighbourhood Service</li>
-                        <li>Clear Reviews of Mechanics</li>
-                    </Container>
-            </div>
-
-        )
-    }
-}
-
-
-
-
-
 class CustomerInput extends React.Component {
     render() {
+        const options=[
+            { key: 'mechanic', value:'mechanic', text:'mechanic'},
+            { key: 'bodywork', value:'bodywork', text:'bodywork'},
+            { key: 'Services and MOTs', value:'Services and MOTs', text:'services and MOTs'},
+            { key: 'Emergency Call-outs', value:'Emergency Call-outs', text:'emergency call-outs'},
+        ];
         return (
-            <div className='CustomerInput'>
-                        <div align ='center' 
-                        style ={{ 
-                            padding: '5em 3em',
-                            backgroundcolour: 'powerblue',
-                        }} 
-                            
-                            >
-                            <h2>Find a mechanic near you now!</h2>
-                            <Input type="text" placeholder="Vehicle Registration Number"/>
-                            <Input type="text" placeholder="Postcode" />
-                            <Button basic color='blue' as={Link} to='/searchresults'>Go!</Button>
-                        </div>
 
-            </div>
+                <Grid stretched stackable columns={4} style={{padding: "3em 3em"}}>
+                    <Grid.Column textAlign='right'>
+                    <h3>i am looking for a </h3>
+                    </Grid.Column>
+                    <Grid.Column>
+                    <Select options={options} placeholder='select service provider'
+                />
+                    </Grid.Column>
+                    <Grid.Column>
+                    <Input type="text" placeholder="Postcode" />
+                    </Grid.Column>
+                    <Grid.Column>
+                     <Button basic color='blue' as={Link} to='/searchresults'>Go!</Button>
+
+                    </Grid.Column>
+
+                </Grid>
         );
     }
 }
