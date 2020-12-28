@@ -69,6 +69,7 @@ class RegisterForm extends React.Component {
 class UserTypeButtons extends React.Component {
     render() {
         return (
+            <div>
             <Grid columns={2} stackable textAlign='center'>
                 <Grid.Row verticalAlign='middle'>
                     <Grid.Column>
@@ -83,6 +84,7 @@ class UserTypeButtons extends React.Component {
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
+            </div>
         );
     }
 }
@@ -124,9 +126,12 @@ class BusinessRegisterForm extends React.Component {
     }
     
     render() {
-        const formSteps = {1: <FormStepOne />, 2: <FormStepTwo />, 3: <FormStepThree />, 4: <FormStepFour />}
+        const formSteps = {1: <BusinessFormStepOne />, 2: <BusinessFormStepTwo />, 3: <BusinessFormStepThree />, 4: <BusinessFormStepFour />}
         return (
-            <Segment>
+            <Segment padded='very'>
+                <h1>You are registering as a Service Provider</h1>
+                <h2>You are {5-[this.state.step]} steps away!</h2>
+
                 <Form>
                     {formSteps[this.state.step]}
                 </Form>
@@ -136,18 +141,10 @@ class BusinessRegisterForm extends React.Component {
     }
 }
 
-class CustomerRegisterForm extends React.Component {
-    render() {
-        return(
-            <div>
-               Your Mom
-            </div>
-        );
-    }
-}
 
 
-class FormStepOne extends React.Component {
+
+class BusinessFormStepOne extends React.Component {
     render() {
         return (
             <Form.Group>
@@ -159,7 +156,7 @@ class FormStepOne extends React.Component {
     }
 }
 
-class FormStepTwo extends React.Component {
+class BusinessFormStepTwo extends React.Component {
     render() {
         return (
             <Form.Group>
@@ -171,7 +168,7 @@ class FormStepTwo extends React.Component {
     }
 }
 
-class FormStepThree extends React.Component {
+class BusinessFormStepThree extends React.Component {
     render() {
         return (
             <Form.Group>
@@ -186,7 +183,7 @@ class FormStepThree extends React.Component {
     }
 }
 
-class FormStepFour extends React.Component {
+class BusinessFormStepFour extends React.Component {
     render() {
         return (
             <Form.Group>
@@ -202,7 +199,7 @@ class FormStepFour extends React.Component {
 
 class FormNavigation extends React.Component {
     render() {
-        const finalStep = 4;
+        const businessfinalStep = 4;
         let nav;
         if (this.props.step === 1) {
             nav = (
@@ -210,7 +207,7 @@ class FormNavigation extends React.Component {
                     <NavigationButton text={"Next"} onClick={this.props.next} />
                 </div>
             );    
-        } else if (this.props.step < finalStep) {
+        } else if (this.props.step < businessfinalStep) {
             nav = (
                 <div>
                     <NavigationButton text={"Back"} onClick={this.props.previous} />
@@ -226,6 +223,113 @@ class FormNavigation extends React.Component {
             );
         }
         return nav;
+    }
+}
+
+class CustomerRegisterForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            step: 1
+        }
+    }
+
+    nextStep = () => {
+        this.setState({
+            step: this.state.step + 1,
+        });
+    }
+
+    previousStep = () => {
+        this.setState({
+            step: this.state.step - 1,
+        });
+    }
+
+    handleChange(event) {
+        const {name, value} = event.target;
+        this.setState({
+            [name]: value
+        });
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const { email, username, password } = this.state;
+        alert(`Your registration detail: \n 
+            Email: ${email} \n 
+            Username: ${username} \n
+            Password: ${password}`);
+    }
+    
+    render() {
+        const formSteps = {1: <CustomerFormStepOne />, 2: <CustomerFormStepTwo />, 3: <CustomerFormStepThree />, 4: <CustomerFormStepFour />}
+        return (
+            <Segment padded='very'>
+                <h1>you are registering as a customer!</h1>
+                <h2>you are {4-[this.state.step]} steps away! what is ...</h2>
+                <Form>
+                    {formSteps[this.state.step]}
+                </Form>
+                <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
+            </Segment>
+        );
+    }
+}
+
+
+
+
+class CustomerFormStepOne extends React.Component {
+    render() {
+        return (
+            <Form.Group>
+                <Form.Input label='your email?' type='email' />
+                <Form.Input label='your password?' type='password' />
+                <Form.Input label='repeat password?' type='password' />
+            </Form.Group>  
+        );
+    }
+}
+
+class CustomerFormStepTwo extends React.Component {
+    render() {
+        return (
+            <Form.Group>
+                <Form.Input label='your first name?' placeholder='First Name' />
+                <Form.Input label='your last name?' placeholder='Last Name' />
+                <Form.Input label='your address?' placeholder='Address' />
+                <Form.Input label='your postcode?' placeholder='Postcode' />
+            </Form.Group>
+        );
+    }
+}
+
+class CustomerFormStepThree extends React.Component {
+    render() {
+        return (
+            <Form.Group>
+                <Form.Input label='registration number of your car?' placeholder='e.g: R944 XBK' />
+                <Form.Input label='brand of your car?' placeholder='Honda' />
+                <Form.Input label='model of your car?' placeholder='Civic' />
+                <Form.Input label='year of your car?' placeholder='1996' />
+            </Form.Group>
+        );
+    }
+}
+
+class CustomerFormStepFour extends React.Component {
+    render() {
+        const collection = [
+            {key: 'collection', value: 'collection', text:'collection'},
+            {key: 'take to garage',value: 'take to garage',text:'take to garage'},
+    ]
+        return (
+            <Form.Group>
+                <Form.Select label='Do you prefer taking it to the garage or arrange collection' options = {collection} />
+                <Form.Input label='Any messages to service providers that services your car?' type='text' />
+            </Form.Group>
+        );
     }
 }
 
