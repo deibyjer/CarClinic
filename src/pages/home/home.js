@@ -50,7 +50,7 @@ class HomePageHeading extends React.Component {
     render() {
         return (
             <Container style={{
-                padding:' 6em 15em'
+                padding:' 6em 0em'
             }}>
             <img src={logo} class="ui fluid image" />
             </Container>
@@ -80,9 +80,9 @@ class CustomerInput extends React.Component {
             { key: 'Emergency Call-outs', value:'Emergency Call-outs', text:'emergency call-outs'},
         ];
         return (
-
-                <Grid stretched stackable columns={4} style={{padding: "3em 3em"}}>
-                    <Grid.Column textAlign='right'>
+            <Container>
+                <Grid stretched stackable columns={4} style={{padding: "5em 3em"}}>
+                    <Grid.Column textAlign='center'>
                     <h3>i am looking for a </h3>
                     </Grid.Column>
                     <Grid.Column>
@@ -98,6 +98,7 @@ class CustomerInput extends React.Component {
                     </Grid.Column>
 
                 </Grid>
+            </Container>
         );
     }
 }

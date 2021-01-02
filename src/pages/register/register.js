@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Form, Grid, Segment} from "semantic-ui-react";
+import {Container,Button, Form, Grid, Segment} from "semantic-ui-react";
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
 import { Link } from 'react-router-dom';
@@ -57,7 +57,6 @@ class RegisterForm extends React.Component {
         if (this.state.isBusiness === null) {
             return <UserTypeButtons handleCustomerClick={this.handleCustomerClick} handleBusinessClick={this.handleBusinessClick}/>;
         }
-
         return (
             <div>
                 {this.state.isBusiness ? <BusinessRegisterForm /> : <CustomerRegisterForm />}
@@ -128,15 +127,15 @@ class BusinessRegisterForm extends React.Component {
     render() {
         const formSteps = {1: <BusinessFormStepOne />, 2: <BusinessFormStepTwo />, 3: <BusinessFormStepThree />, 4: <BusinessFormStepFour />}
         return (
-            <Segment padded='very'>
+            <Container>
                 <h1>You are registering as a Service Provider</h1>
                 <h2>You are {5-[this.state.step]} steps away!</h2>
 
                 <Form>
                     {formSteps[this.state.step]}
                 </Form>
-                <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
-            </Segment>
+                <BusinessFormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
+            </Container>
         );
     }
 }
@@ -197,7 +196,7 @@ class BusinessFormStepFour extends React.Component {
     }
 }
 
-class FormNavigation extends React.Component {
+class BusinessFormNavigation extends React.Component {
     render() {
         const businessfinalStep = 4;
         let nav;
@@ -215,13 +214,13 @@ class FormNavigation extends React.Component {
                 </div>
             );
         } else {
-            nav = (
-                <div>
-                    <NavigationButton text={"Back"} onClick={this.props.previous} />
-                    <Button type='submit' as={Link} to='/searchresults' >Submit</Button>
-                </div>
-            );
-        }
+                nav = (
+                    <div>
+                        <NavigationButton text={"Back"} onClick={this.props.previous} />
+                        <Button type='submit' as={Link} to='/businessdashboard' >Submit</Button>
+                    </div>
+                );
+            } 
         return nav;
     }
 }
@@ -263,16 +262,16 @@ class CustomerRegisterForm extends React.Component {
     }
     
     render() {
-        const formSteps = {1: <CustomerFormStepOne />, 2: <CustomerFormStepTwo />, 3: <CustomerFormStepThree />, 4: <CustomerFormStepFour />}
+        const formSteps = {1: <CustomerFormStepOne />, 2: <CustomerFormStepTwo />, 3: <CustomerFormStepThree />,}
         return (
-            <Segment padded='very'>
+            <Container>
                 <h1>you are registering as a customer!</h1>
                 <h2>you are {4-[this.state.step]} steps away! what is ...</h2>
                 <Form>
                     {formSteps[this.state.step]}
                 </Form>
-                <FormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
-            </Segment>
+                <CustomerFormNavigation step={this.state.step} next={this.nextStep} previous={this.previousStep}  />
+            </Container>
         );
     }
 }
@@ -318,18 +317,32 @@ class CustomerFormStepThree extends React.Component {
     }
 }
 
-class CustomerFormStepFour extends React.Component {
+class CustomerFormNavigation extends React.Component {
     render() {
-        const collection = [
-            {key: 'collection', value: 'collection', text:'collection'},
-            {key: 'take to garage',value: 'take to garage',text:'take to garage'},
-    ]
-        return (
-            <Form.Group>
-                <Form.Select label='Do you prefer taking it to the garage or arrange collection' options = {collection} />
-                <Form.Input label='Any messages to service providers that services your car?' type='text' />
-            </Form.Group>
-        );
+        const customerfinalStep = 3;
+        let nav;
+        if (this.props.step === 1) {
+            nav = (
+                <div>
+                    <NavigationButton text={"Next"} onClick={this.props.next} />
+                </div>
+            );    
+        } else if (this.props.step < customerfinalStep) {
+            nav = (
+                <div>
+                    <NavigationButton text={"Back"} onClick={this.props.previous} />
+                    <NavigationButton text={"Next"} onClick={this.props.next} />
+                </div>
+            );
+        } else {
+                nav = (
+                <div>
+                        <NavigationButton text={"Back"} onClick={this.props.previous} />
+                        <Button type='submit' as={Link} to='/searchresults' >Submit</Button>
+                    </div>
+                );
+            }
+        return nav;
     }
 }
 

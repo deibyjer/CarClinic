@@ -38,11 +38,8 @@ class LayoutContainer extends React.Component {
 class PageContent extends React.Component {
     render() {
         return(
-            <Segment>
+            <Container>
                 <h1>Service Providers around you</h1>
-                        <Container center>
-                        <p>i am looking for a </p>
-                        </Container>
                 <Grid>
                     <Grid.Column width={5}>
                         <ContentMenu />
@@ -62,7 +59,7 @@ class PageContent extends React.Component {
                     </Placeholder>
                 </Grid.Column>
                 </Grid>
-                </Segment>
+                </Container>
         )
 
     }
