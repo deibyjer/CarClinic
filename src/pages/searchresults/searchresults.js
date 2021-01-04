@@ -3,11 +3,14 @@ import { Segment,
     Container,
     Placeholder,
     Grid,
+    Image,
     Menu
 } from 'semantic-ui-react'
 
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
+import garageIcon from './ProfileIcons/NeighbourhoodCustoms.jpg'
+import Booking from '../booking/booking';
 import {
     Link,
 } from 'react-router-dom'
@@ -44,19 +47,39 @@ class PageContent extends React.Component {
                     <Grid.Column width={5}>
                         <ContentMenu />
                     </Grid.Column>
-                <Grid.Column width ={8}>
-                    <Placeholder stretched>
-                    <Placeholder.Header image>
-                        <Placeholder.Line />
-                        <Placeholder.Line />
-                        </Placeholder.Header>
-                        <Placeholder.Paragraph>
-                        <Placeholder.Line />
-                        <Placeholder.Line />
-                        <Placeholder.Line />
-                        <Placeholder.Line />
-                        </Placeholder.Paragraph>
-                    </Placeholder>
+                <Grid.Column width={11}>
+                    <Grid>
+                    <Grid.Row as={Link} to ='./booking/' >
+                   <Grid.Column width={3}>
+                    <Image src={garageIcon} fluid/>
+
+                   </Grid.Column>
+                   <Grid.Column width={13}>
+                    <h2>Neighbourhood Customs</h2>
+                    Your One-Stop-Shop for all motor-related, with your next-door-neighbour service
+                   </Grid.Column>
+                   </Grid.Row>
+                   <Grid.Row as={Link} to ='./booking/' >
+                   <Grid.Column width={3}>
+                    <Image src={garageIcon} fluid/>
+
+                   </Grid.Column>
+                   <Grid.Column width={13}>
+                    <h2>The Vehicle Surgeons</h2>
+                    I will fix your Alfa Romeo proud
+                   </Grid.Column>
+                   </Grid.Row>
+                   <Grid.Row as={Link} to ='./booking/' >
+                   <Grid.Column width={3}>
+                    <Image src={garageIcon} fluid/>
+
+                   </Grid.Column>
+                   <Grid.Column width={13}>
+                    <h2>Edi's garage</h2>
+                    Alom's best friend, doesnt need more explanation 
+                   </Grid.Column>
+                   </Grid.Row>
+                   </Grid>
                 </Grid.Column>
                 </Grid>
                 </Container>
