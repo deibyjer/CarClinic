@@ -7,6 +7,7 @@ import {
 
 import Home from './pages/home/home.js';
 import Register from './pages/register/register.js';
+import Booking from './pages/booking/booking.js';
 import BusinessDashboard from './pages/businessdashboard/BusinessDashboard.js';
 import SearchResults from './pages/searchresults/searchresults';
 
@@ -26,6 +27,9 @@ class App extends React.Component {
             </Route>
             <Route path="/searchresults">
               <SearchResults />
+            </Route>
+            <Route path="/booking">
+              <Booking />
             </Route>
             <Route path="/">
               <Home />
