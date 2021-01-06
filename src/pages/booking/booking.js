@@ -52,12 +52,14 @@ class Calendly extends React.Component {
       
     }
     render(){
+        var user = "chwong1996"
+        var calendlylink = 'https://calendly.com/' + user + '?hide_gdpr_banner=1'
       return (
         <div>
           <div id="schedule_form">
             <div 
               className="calendly-inline-widget"
-              data-url="https://calendly.com/chwong1996?hide_gdpr_banner=1"
+              data-url = {calendlylink}
               style={{ minWidth: '320px', height: '580px' }} />
           </div>
         </div>

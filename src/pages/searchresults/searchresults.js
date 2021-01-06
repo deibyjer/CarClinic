@@ -9,8 +9,8 @@ import { Segment,
 
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
-import NeighbourhoodCustoms from './ProfileIcons/NeighbourhoodCustoms.jpg'
-import TheVehicleSurgeons from './ProfileIcons/TheVehicleSurgeons.png'
+import NeighbourhoodCustomsLogo from './ProfileIcons/NeighbourhoodCustoms.jpg'
+import TheVehicleSurgeonsLogo from './ProfileIcons/TheVehicleSurgeons.png'
 import {
     Link,
 } from 'react-router-dom'
@@ -40,6 +40,31 @@ class LayoutContainer extends React.Component {
 
 class PageContent extends React.Component {
     render() {
+
+        var garages = {
+            NeighbourhoodCustoms : {
+                name: "Neighbourhood Customs",
+                description: "Your One-Stop-Shop for all motor-related, with your next-door-neighbour service",
+                logo: NeighbourhoodCustomsLogo,
+                link: "chwong1996",
+            },
+            TheVehicleSurgeons :{
+                name: "TheVehicleSurgeons",
+                description: "Breakdown Specialists, Servicing and Maintenance, Specialist Fault Finders, Batteries, Alternators and Start Motors",
+                logo: TheVehicleSurgeonsLogo,
+                link: "thevehiclesurgeons",
+            
+            },
+            EdiGarage:{
+                name:"Edi's Garage",
+                description: "Alom's best friend, no explanation needed",
+                logo: NeighbourhoodCustomsLogo,
+                link: "chwong1996",
+            },
+
+
+        }
+
         return(
             <Container>
                 <h1>Service Providers around you</h1>
@@ -51,7 +76,7 @@ class PageContent extends React.Component {
                     <Grid>
                     <Grid.Row as={Link} to ='./booking/' >
                    <Grid.Column width={3}>
-                    <Image src={NeighbourhoodCustoms} fluid/>
+                    <Image src={NeighbourhoodCustomsLogo} fluid/>
 
                    </Grid.Column>
                    <Grid.Column width={13}>
@@ -61,7 +86,7 @@ class PageContent extends React.Component {
                    </Grid.Row>
                    <Grid.Row as={Link} to ='./booking/' >
                    <Grid.Column width={3}>
-                    <Image src={TheVehicleSurgeons} fluid/>
+                    <Image src={TheVehicleSurgeonsLogo} fluid/>
 
                    </Grid.Column>
                    <Grid.Column width={13}>
@@ -71,7 +96,7 @@ class PageContent extends React.Component {
                    </Grid.Row>
                    <Grid.Row as={Link} to ='./booking/' >
                    <Grid.Column width={3}>
-                    <Image src={NeighbourhoodCustoms} fluid/>
+                    <Image src={NeighbourhoodCustomsLogo} fluid/>
 
                    </Grid.Column>
                    <Grid.Column width={13}>
