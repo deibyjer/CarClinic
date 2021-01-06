@@ -53,6 +53,9 @@ class HomePageHeading extends React.Component {
                 padding:' 6em 0em'
             }}>
             <img src={logo} class="ui fluid image" />
+                <Container textAlign='center'>
+                    <h2> simplest way to book an appointment, for your car</h2>
+                </Container>
             </Container>
         )
     }

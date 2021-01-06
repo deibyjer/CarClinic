@@ -9,8 +9,8 @@ import { Segment,
 
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
-import garageIcon from './ProfileIcons/NeighbourhoodCustoms.jpg'
-import Booking from '../booking/booking';
+import NeighbourhoodCustoms from './ProfileIcons/NeighbourhoodCustoms.jpg'
+import TheVehicleSurgeons from './ProfileIcons/TheVehicleSurgeons.png'
 import {
     Link,
 } from 'react-router-dom'
@@ -51,7 +51,7 @@ class PageContent extends React.Component {
                     <Grid>
                     <Grid.Row as={Link} to ='./booking/' >
                    <Grid.Column width={3}>
-                    <Image src={garageIcon} fluid/>
+                    <Image src={NeighbourhoodCustoms} fluid/>
 
                    </Grid.Column>
                    <Grid.Column width={13}>
@@ -61,7 +61,7 @@ class PageContent extends React.Component {
                    </Grid.Row>
                    <Grid.Row as={Link} to ='./booking/' >
                    <Grid.Column width={3}>
-                    <Image src={garageIcon} fluid/>
+                    <Image src={TheVehicleSurgeons} fluid/>
 
                    </Grid.Column>
                    <Grid.Column width={13}>
@@ -71,7 +71,7 @@ class PageContent extends React.Component {
                    </Grid.Row>
                    <Grid.Row as={Link} to ='./booking/' >
                    <Grid.Column width={3}>
-                    <Image src={garageIcon} fluid/>
+                    <Image src={NeighbourhoodCustoms} fluid/>
 
                    </Grid.Column>
                    <Grid.Column width={13}>

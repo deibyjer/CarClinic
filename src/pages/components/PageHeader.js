@@ -11,10 +11,7 @@ class PageHeader extends React.Component {
             <div className='PageHeader'>
                     <Menu size='medium' secondary>
                         {!onHome && homeMenuItem}
-                        <Menu.Item position='right'>
-                            <LoginModal />
-                            <Menu.Item as={Link} to='/register'> Sign Up</Menu.Item>
-                        </Menu.Item>
+                        
                     </Menu>
             </div>
         );
