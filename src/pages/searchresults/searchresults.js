@@ -53,7 +53,6 @@ class PageContent extends React.Component {
                 description: "Breakdown Specialists, Servicing and Maintenance, Specialist Fault Finders, Batteries, Alternators and Start Motors",
                 logo: TheVehicleSurgeonsLogo,
                 link: "thevehiclesurgeons",
-            
             },
             EdiGarage:{
                 name:"Edi's Garage",
@@ -61,8 +60,6 @@ class PageContent extends React.Component {
                 logo: NeighbourhoodCustomsLogo,
                 link: "chwong1996",
             },
-
-
         }
 
         return(
@@ -72,44 +69,24 @@ class PageContent extends React.Component {
                     <Grid.Column width={5}>
                         <ContentMenu />
                     </Grid.Column>
-                <Grid.Column width={11}>
-                    <Grid>
-                    <Grid.Row as={Link} to ='./booking/' >
-                   <Grid.Column width={3}>
-                    <Image src={NeighbourhoodCustomsLogo} fluid/>
-
-                   </Grid.Column>
-                   <Grid.Column width={13}>
-                    <h2>Neighbourhood Customs</h2>
-                    Your One-Stop-Shop for all motor-related, with your next-door-neighbour service
-                   </Grid.Column>
-                   </Grid.Row>
-                   <Grid.Row as={Link} to ='./booking/' >
-                   <Grid.Column width={3}>
-                    <Image src={TheVehicleSurgeonsLogo} fluid/>
-
-                   </Grid.Column>
-                   <Grid.Column width={13}>
-                    <h2>The Vehicle Surgeons</h2>
-                    I will fix your Alfa Romeo proud
-                   </Grid.Column>
-                   </Grid.Row>
-                   <Grid.Row as={Link} to ='./booking/' >
-                   <Grid.Column width={3}>
-                    <Image src={NeighbourhoodCustomsLogo} fluid/>
-
-                   </Grid.Column>
-                   <Grid.Column width={13}>
-                    <h2>Edi's garage</h2>
-                    Alom's best friend, doesnt need more explanation 
-                   </Grid.Column>
-                   </Grid.Row>
-                   </Grid>
-                </Grid.Column>
+                    <Grid.Column width={11}>
+                        <Grid>
+                            {Object.keys(garages).map((keyName, i) => (
+                                <Grid.Row as={Link} to ='./booking' >
+                                    <Grid.Column width={3}>
+                                        <Image src={garages[keyName].logo} fluid/>
+                                    </Grid.Column>
+                                    <Grid.Column width={13}>
+                                        <h2>{keyName}</h2>
+                                        {garages[keyName].description}
+                                    </Grid.Column>
+                                </Grid.Row>
+                            ))}
+                        </Grid>
+                    </Grid.Column>
                 </Grid>
-                </Container>
-        )
-
+            </Container>
+    );
     }
 }
 

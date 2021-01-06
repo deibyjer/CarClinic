@@ -11,6 +11,7 @@
       <e p="node_modules\fast-deep-equal" t="IncludeRecursive" />
       <e p="node_modules\keyboard-key" t="IncludeRecursive" />
       <e p="node_modules\react" t="IncludeRecursive" />
+      <e p="node_modules\react-calendly" t="IncludeRecursive" />
       <e p="node_modules\react-dom" t="IncludeRecursive" />
       <e p="node_modules\react-fast-compare" t="IncludeRecursive" />
       <e p="node_modules\react-popper" t="IncludeRecursive" />
