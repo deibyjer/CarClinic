@@ -1,32 +1,32 @@
 import React from 'react';
-import {
-Container,
-Segment,
-} from 'semantic-ui-react'
-
 import PageHeader from '../components/PageHeader';
 import PageFooter from '../components/PageFooter';
-import { InlineWidget } from "react-calendly";
-import {
-    Link
-} from 'react-router-dom'
+
 
 class Booking extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: null
+        }
+    }
+    
+    
     render() {
         return (
-            <div className='Booking'>
-                <LayoutContainer />
+            <div className='Booking' style={{backgroundColor: '#3c95bd', height: '100vh'}}>
+                <LayoutContainer user={this.state.user}/>
             </div>
-        )
+        );
     }
 }
 
 class LayoutContainer extends React.Component {
     render() {
         return (
-            <div className='LayoutContainer'>
+            <div className='LayoutContainer' >
                 <PageHeader />
-                <PageContent />
+                <PageContent user={this.props.user}/>
                 <PageFooter />
             </div>
         )
@@ -36,8 +36,8 @@ class LayoutContainer extends React.Component {
 class PageContent extends React.Component {
     render() {
         return(
-            <Calendly />
-        )
+            <Calendly user={this.props.user}/>
+        );
     }
 }
 
@@ -48,23 +48,20 @@ class Calendly extends React.Component {
       script.setAttribute('src',  'https://assets.calendly.com/assets/external/widget.js');
       head.appendChild(script);
     }
-    componentWillUnmount() {
-      
+
+    render() {
+        var calendlylink = 'https://calendly.com/' + this.props.user + '?hide_gdpr_banner=1'
+        return (
+            <div>
+              <div id="schedule_form">
+                <div 
+                  className="calendly-inline-widget"
+                  data-url = {calendlylink}
+                  style={{ minWidth: '320px', height: '920px' }} />
+              </div>
+            </div>
+        );
     }
-    render(){
-        var user = "chwong1996"
-        var calendlylink = 'https://calendly.com/' + user + '?hide_gdpr_banner=1'
-      return (
-        <div>
-          <div id="schedule_form">
-            <div 
-              className="calendly-inline-widget"
-              data-url = {calendlylink}
-              style={{ minWidth: '320px', height: '580px' }} />
-          </div>
-        </div>
-      );
-    }
-  }
+}
 
 export default Booking

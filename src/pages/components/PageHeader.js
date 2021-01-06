@@ -9,9 +9,8 @@ class PageHeader extends React.Component {
         let homeMenuItem = <Menu.Item header as={Link} to='../'>Car Clinic</Menu.Item>;
         return (
             <div className='PageHeader'>
-                    <Menu size='medium' secondary>
+                    <Menu secondary>
                         {!onHome && homeMenuItem}
-                        
                     </Menu>
             </div>
         );

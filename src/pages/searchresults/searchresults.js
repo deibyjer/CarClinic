@@ -1,7 +1,5 @@
 import React from 'react';
-import { Segment,
-    Container,
-    Placeholder,
+import {
     Grid,
     Image,
     Menu
@@ -40,30 +38,32 @@ class LayoutContainer extends React.Component {
 
 class PageContent extends React.Component {
     render() {
-
-        var garages = {
-            NeighbourhoodCustoms : {
+        const garages = {
+            HenryGarage : {
                 name: "Neighbourhood Customs",
                 description: "Your One-Stop-Shop for all motor-related, with your next-door-neighbour service",
                 logo: NeighbourhoodCustomsLogo,
                 link: "chwong1996",
+                address: "NW6 2JT"
             },
             TheVehicleSurgeons :{
                 name: "TheVehicleSurgeons",
                 description: "Breakdown Specialists, Servicing and Maintenance, Specialist Fault Finders, Batteries, Alternators and Start Motors",
                 logo: TheVehicleSurgeonsLogo,
                 link: "thevehiclesurgeons",
+                address: "NW6 2JT"
             },
             EdiGarage:{
                 name:"Edi's Garage",
                 description: "Alom's best friend, no explanation needed",
                 logo: NeighbourhoodCustomsLogo,
                 link: "chwong1996",
+                address: "E14 7DG"
             },
         }
 
-        return(
-            <Container>
+        return (
+            <div style={{marginLeft: "40px"}}>
                 <h1>Service Providers around you</h1>
                 <Grid>
                     <Grid.Column width={5}>
@@ -71,13 +71,13 @@ class PageContent extends React.Component {
                     </Grid.Column>
                     <Grid.Column width={11}>
                         <Grid>
-                            {Object.keys(garages).map((keyName, i) => (
-                                <Grid.Row as={Link} to ='./booking' >
+                            {Object.keys(garages).map((keyName) => (
+                                <Grid.Row as={Link} to={'./booking/' + garages[keyName].link}>
                                     <Grid.Column width={3}>
                                         <Image src={garages[keyName].logo} fluid/>
                                     </Grid.Column>
                                     <Grid.Column width={13}>
-                                        <h2>{keyName}</h2>
+                                        <h2>{garages[keyName].name}</h2>
                                         {garages[keyName].description}
                                     </Grid.Column>
                                 </Grid.Row>
@@ -85,8 +85,8 @@ class PageContent extends React.Component {
                         </Grid>
                     </Grid.Column>
                 </Grid>
-            </Container>
-    );
+            </div>
+        );
     }
 }
 

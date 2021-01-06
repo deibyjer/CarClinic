@@ -1,5 +1,5 @@
 import React from "react";
-import Image, {Grid, Container} from "semantic-ui-react";
+import {Grid, Container} from "semantic-ui-react";
 
 
 class PageFooter extends React.Component {

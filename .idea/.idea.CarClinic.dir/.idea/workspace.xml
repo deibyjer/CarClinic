@@ -21,6 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3b4c4231-4a79-4677-a63f-d29c9a9b55d2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CarClinic.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CarClinic.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/booking/booking.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/booking/booking.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/components/PageFooter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/components/PageFooter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/components/PageHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/components/PageHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/home/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/home/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/searchresults/searchresults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/searchresults/searchresults.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +56,12 @@
         <option value="$PROJECT_DIR$/src/pages/register/register.js" />
         <option value="$PROJECT_DIR$/src/pages/components/LoginModal.js" />
         <option value="$PROJECT_DIR$/src/pages/businessdashboard/BusinessDashboard.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/pages/components/PageFooter.js" />
         <option value="$PROJECT_DIR$/src/pages/home/home.js" />
+        <option value="$PROJECT_DIR$/src/pages/components/PageFooter.js" />
         <option value="$PROJECT_DIR$/src/pages/components/PageHeader.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/pages/searchresults/searchresults.js" />
+        <option value="$PROJECT_DIR$/src/pages/booking/booking.js" />
       </list>
     </option>
   </component>
@@ -84,7 +90,7 @@
       <workItem from="1604599064492" duration="10262000" />
       <workItem from="1606343267587" duration="290000" />
       <workItem from="1608569778331" duration="8092000" />
-      <workItem from="1609967349938" duration="819000" />
+      <workItem from="1609967349938" duration="5787000" />
     </task>
     <servers />
   </component>
