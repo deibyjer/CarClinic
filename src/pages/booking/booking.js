@@ -11,6 +11,12 @@ class Booking extends React.Component {
         }
     }
     
+    componentDidMount () {
+        this.setState({
+            user: this.props.match.params.user
+        });
+        
+    }
     
     render() {
         return (

@@ -28,9 +28,7 @@ class App extends React.Component {
             <Route path="/searchresults">
               <SearchResults />
             </Route>
-            <Route path="/booking/:user">
-              <Booking />
-            </Route>
+            <Route path="/booking/:user" component={Booking} />
             <Route path="/">
               <Home />
             </Route>
