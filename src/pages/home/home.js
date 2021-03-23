@@ -46,7 +46,7 @@ class HomePageHeading extends React.Component {
             }}>
                 <img src={logo} class="ui fluid image" />
                 <Container textAlign='center'>
-                    <h2> simplest way to book an appointment, for your car</h2>
+                    <h2> The Headquarters for your local </h2>
                 </Container>
             </Container>
         );

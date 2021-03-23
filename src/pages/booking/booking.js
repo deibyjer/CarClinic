@@ -42,8 +42,11 @@ class LayoutContainer extends React.Component {
 class PageContent extends React.Component {
     render() {
         return(
+            <div>
             <Calendly user={this.props.user}/>
-        );
+            <UserReview />
+            </div>
+        )
     }
 }
 
@@ -66,6 +69,14 @@ class Calendly extends React.Component {
                   style={{ minWidth: '320px', height: '920px' }} />
               </div>
             </div>
+        );
+    }
+}
+
+class UserReview extends React.Component {
+    render() {
+        return(
+            <h1>User Reviews</h1>
         );
     }
 }
