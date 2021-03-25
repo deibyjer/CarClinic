@@ -1,19 +1,25 @@
 {
+  "homepage": "https://deibyjer.github.io/CarClinic/",
   "name": "carclinic",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "-": "0.0.1",
+    "gh-pages": "^3.1.0",
     "react": "^17.0.1",
     "react-calendly": "^1.3.0",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "0.9.5",
+    "save-dev": "0.0.1-security",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^2.0.1"
   },
   "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
