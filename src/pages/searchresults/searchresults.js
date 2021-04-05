@@ -45,22 +45,8 @@ class PageContent extends React.Component {
                 logo: NeighbourhoodCustomsLogo,
                 link: "chwong1996",
                 address: "NW6 2JT"
+                },  
             },
-            TheVehicleSurgeons :{
-                name: "TheVehicleSurgeons",
-                description: "Breakdown Specialists, Servicing and Maintenance, Specialist Fault Finders, Batteries, Alternators and Start Motors",
-                logo: TheVehicleSurgeonsLogo,
-                link: "thevehiclesurgeons",
-                address: "NW6 2JT"
-            },
-            EdiGarage:{
-                name:"Edi's Garage",
-                description: "Alom's best friend, no explanation needed",
-                logo: NeighbourhoodCustomsLogo,
-                link: "chwong1996",
-                address: "E14 7DG"
-            },
-        }
 
         return (
             <div style={{marginLeft: "40px"}}>
