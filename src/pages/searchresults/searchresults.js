@@ -45,8 +45,8 @@ class PageContent extends React.Component {
                 logo: NeighbourhoodCustomsLogo,
                 link: "chwong1996",
                 address: "NW6 2JT"
-                },  
             },
+        }
 
         return (
             <div style={{marginLeft: "40px"}}>
